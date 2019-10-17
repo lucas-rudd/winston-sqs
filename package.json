@@ -1,0 +1,34 @@
+{
+  "name": "winston-sqs",
+  "version": "1.0.0",
+  "description": "A package to transport logs to SQS using Winston",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "$(yarn bin)/rimraf ./lib",
+    "prepublish": "yarn run build",
+    "build": "yarn run clean && $(yarn bin)/tsc",
+    "format": "$(yarn bin)/prettier ./src/**/*.ts --write",
+    "test": "mocha -r ts-node/register __tests__/**"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.549.0",
+    "winston": "^3.2.1",
+    "winston-transport": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.1",
+    "@types/sinon": "^7.5.0",
+    "aws-sdk-mock": "^4.5.0",
+    "mocha": "^6.2.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "sinon": "^7.5.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "files": [
+    "lib/*"
+  ]
+}
