@@ -12,7 +12,7 @@ export interface WinstonSQSTransportConfig extends TransportStreamOptions {
 export class SQSTransport extends Transport {
   private sqs: SQS;
   private readonly optional = {
-    region: process.env.AWS_REGION || 'us-west-2',
+    region: process.env.AWS_REGION,
     handleExceptions: false,
     silent: false,
   };
